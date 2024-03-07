@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container py-5">
+    <h2 class="text-white text-center">Mazaliy Pizza</h2>
+
+    <div class="row mt-5">
+        {% for item in all_pizza %}
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ item.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.name }}</h5>
+                  <p class="card-text">{{ item.size }}</p>
+                  <p class="card-text">{{ item.price }} UZS</p>
+                  <p class="card-text">{{ item.ingredient }}</p>
+                  <a href="#" class="btn btn-primary">Order</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
+
